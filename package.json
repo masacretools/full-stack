@@ -1,0 +1,20 @@
+{
+    "name": "node50126",
+    "version": "1.0.0",
+    "description": "programando en node",
+    "license": "ISC",
+    "author": "Ricardo Aquino",
+    "type": "commonjs",
+    "main": "app_01.js",
+    "scripts": {
+        "dev": "nodemon app_01.js"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.14"
+    },
+    "dependencies": {
+        "ejs": "^7.0.2",
+        "express": "^5.3.0",
+        "mongoose": "^9.11.4"
+    }
+}

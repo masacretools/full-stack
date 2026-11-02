@@ -1,0 +1,178 @@
+function busquedalineal(arr, elemento) {
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === elemento) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+const arreglo = [10, 5, 3, 8, 2, 6];
+const elementobuscado = 2;
+const indice = busquedalineal(arreglo, elementobuscado);
+
+console.log(`El elemento ${elementobuscado} está en el índice ${indice}`);
+//1.Sumar los elementos de un array//
+
+function sumarArray(arr) {
+    let suma = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+        suma = suma + arr[i];
+    }
+
+    return suma;
+}
+console.log(`1. Suma del array`)
+console.log(sumarArray([2, 4, 6, 8]));
+
+//2.Encontrar el numero mayor y menor 
+
+function mayorYMenor(numeros) {
+    if (numeros.length === 0) {
+        return "El arreglo está vacío";
+    }
+    let mayor = numeros[0];
+    let menor = numeros[0];
+    for (let i = 1; i < numeros.length; i++) {
+        if (numeros[i] > mayor) {
+            mayor = numeros[i];
+        }
+
+        if (numeros[i] < menor) {
+            menor = numeros[i];
+        }
+    }
+    return {
+        mayor: mayor,
+        menor: menor
+    };
+}
+console.log(`2. Numero mayor - menor`)
+console.log(mayorYMenor([15, 3, 27, 8, 12]));
+
+//3. Contar elementos pares 
+
+function contarPares(numeros) {
+    let contador = 0;
+
+    for (let i = 0; i < numeros.length; i++) {
+        if (numeros[i] % 2 === 0) {
+            contador++;
+        }
+    }
+
+    return contador;
+}
+
+console.log(`----------`)
+console.log(`3. Cantidad de Numeros pares`)
+console.log(contarPares([1, 2, 4, 7, 8, 10]));
+
+//4. Ordenar un array sin usar sort()
+
+function ordenarArray(numeros) {
+    let arr = [...numeros];
+
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = 0; j < arr.length - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                let temporal = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temporal;
+            }
+        }
+    }
+
+    return arr;
+}
+
+console.log(`----------`)
+console.log(`4. Array ordenada`)
+console.log(ordenarArray([5, 2, 8, 1, 3]));
+
+//5. Buscar elemento de una array
+
+function buscarNombre(nombres, nombreBuscado) {
+    for (let i = 0; i < nombres.length; i++) {
+        if (nombres[i] === nombreBuscado) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+let nombres = ["Ana", "Luis", "Pedro", "María"];
+
+console.log(`----------`)
+console.log(`5. Busqueda de array`)
+console.log(buscarNombre(nombres, "Pedro"));
+console.log(buscarNombre(nombres, "Carlos"));
+
+//6. Revertir un array sin usar reverse()
+
+function invertirArray(arr) {
+    let invertido = [];
+
+    for (let i = arr.length - 1; i >= 0; i--) {
+        invertido.push(arr[i]);
+    }
+
+    return invertido;
+}
+
+console.log(`----------`)
+console.log(`6. Array revertida`)
+console.log(invertirArray([1, 2, 3, 4, 5]));
+
+//7. Convertir nombres a mayusculas
+
+function convertirMayusculas(nombres) {
+    return nombres.map(function(nombre) {
+        return nombre.toUpperCase();
+    });
+}
+
+console.log(`----------`)
+console.log(`7. Nombres a mayusculas`)
+console.log(convertirMayusculas(["ana", "luis", "pedro"]));
+
+//8. Sumar num. positivos
+
+function sumarPositivos(numeros) {
+    let positivos = numeros.filter(function(numero) {
+        return numero > 0;
+    });
+
+    let suma = 0;
+
+    for (let i = 0; i < positivos.length; i++) {
+        suma += positivos[i];
+    }
+
+    return suma;
+}
+
+console.log(`----------`)
+console.log(`8. Suma de num. positivos`)
+console.log(sumarPositivos([-5, 10, -2, 7, 3]));
+
+//9. Obtener el primer multiplo de 5
+
+function primerMultiploDeCinco(numeros) {
+    return numeros.find(function(numero) {
+        return numero % 5 === 0;
+    });
+}
+
+console.log(`----------`)
+console.log(`9. Primer multiplo de 5`)
+console.log(primerMultiploDeCinco([3, 7, 12, 20, 25]));
+
+
+
+
+
+
+
